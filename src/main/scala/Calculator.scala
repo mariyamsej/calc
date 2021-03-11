@@ -1,55 +1,41 @@
-import MainCalc.log
-
-import scala.io.StdIn.readLine
 import util.control.Breaks._
 import akka.actor._
-import akka.pattern.{ask, pipe}
-import akka.util.Timeout
 
-import scala.collection._
-import scala.concurrent.duration._
-import scala.concurrent.ExecutionContext.Implicits.global
-
-case class SetRequest(expr: String)
-case class GetRequest(res: Double)
-
-object Calculator extends Actor{
+class Calculator extends Actor with ActorLogging{
   var expr = ""
-  def name = "calculator"
 
-  def receive = {
-    case r: SetRequest =>
-      expr = r
-    case r: GetRequest =>
-      sender ! result()
-    case r =>
-      log.warning(s"Unexpected: $r")
-  }
+  def name = "calculator"
 
   def run(f: (Array[String], Double, String => Double) => Double, g: String => Array[String], h: String => Double): Double = {
     var run = true
-    var result: Double = 0
+    var result_ex: Double = 0
 
-    breakable {
-      while (run) {
-
-        if (expr == "exit") {
-          run = false
-          break
-        }
-        var parssed_expr = g(expr)
-
-        if (parssed_expr(0) == "/" || parssed_expr(0) == "*" || parssed_expr(0) == "-" || parssed_expr(0) == "+") {
-          parssed_expr :+= result.toString
-        }
-        else{
-          result = 0
-        }
-
-        result = f(parssed_expr, result, h)
-
-      }
+    if (expr == "exit") {
+      run = false
+      break
     }
+    var parssed_expr = g(expr)
+
+    if (parssed_expr(0) == "/" || parssed_expr(0) == "*" || parssed_expr(0) == "-" || parssed_expr(0) == "+") {
+      parssed_expr :+= result_ex.toString
+    }
+    else{
+      result_ex = 0
+    }
+
+    result_ex = f(parssed_expr, result_ex, h)
+
+    return result_ex
+  }
+
+
+  def receive = {
+    case r: SetRequest =>
+      expr = r.expr
+    case r: GetRequest =>
+      sender ! GetResponse(result())
+    case r =>
+      log.warning(s"Unexpected: $r")
   }
 
   def inputs(expr: String): Array[String] = {
@@ -122,6 +108,4 @@ object Calculator extends Actor{
     run(calculate, inputs, make_number)
 
   }
-
-
 }

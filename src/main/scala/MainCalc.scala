@@ -1,20 +1,20 @@
-import Calculator._
-
 import akka.actor._
 import akka.pattern.{ask, pipe}
 import akka.util.Timeout
 
-import scala.collection._
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits.global
+import scala.language.postfixOps
 
 case object Start
 case class SetRequest(expr: String)
-case class GetRequest(res: Double)
+case class GetRequest(res: String)
+case class GetResponse(res: Double)
 
-object MainCalc extends Actor with ActorLogging {
+class MainCalc extends Actor with ActorLogging {
         implicit val timeout = Timeout(5 seconds)
-        val mapActor = context.actorOf(Props(new Calculator), Calculator.name)
+
+        val calcActor = context.actorOf(Props(new Calculator), "Calc")
 
         override def preStart() {
             self ! Start
@@ -22,14 +22,11 @@ object MainCalc extends Actor with ActorLogging {
 
         def receive = {
             case Start =>
-                mapActor ! "dummy request"
-                mapActor ! SetRequest("key", "value")
-                val respF = mapActor ? GetRequest("key")
+                calcActor ! SetRequest("2-9+1=")
+                val respF = calcActor ? GetRequest("Result")
                 respF pipeTo self
 
             case r: GetResponse =>
-                log.warning(s"Response: $r")
-                context.system.shutdown()
+                log.warning(s"Response: ${r.res}")
         }
-
 }
