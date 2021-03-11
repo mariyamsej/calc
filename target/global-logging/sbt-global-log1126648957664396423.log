@@ -39,3 +39,65 @@
 [debug]           Load.loadUnit: defsScala took 0.0081ms
 [debug] [Loading] Scanning directory C:\Users\User\Documents\hw_scala\calc\project
 [debug]             Load.loadUnit: mkEval took 12.0022ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\User\Documents\hw_scala\calc\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.5444 ms
+[info] loading settings for project calc-build from idea.sbt ...
+[debug]               Load.resolveProject(calc-build) took 3.7885ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id calc-build, base: C:\Users\User\Documents\hw_scala\calc\project, plugins: List(<none>))) took 5.9897ms
+[debug] [Loading] Done in C:\Users\User\Documents\hw_scala\calc\project, returning: (calc-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2935.5507ms
+[debug]           Load.loadUnit: cleanEvalClasses took 5.7911ms
+[debug]         Load.loadUnit(file:/C:/Users/User/Documents/hw_scala/calc/project/, ...) took 2975.5728ms
+[debug]       Load.apply: load took 2977.2801ms
+[debug]       Load.apply: resolveProjects took 0.0847ms
+[debug]       Load.apply: finalTransforms took 13.6871ms
+[debug]       Load.apply: config.delegates took 0.3734ms
+[debug]       Load.apply: Def.make(settings)... took 82.9572ms
+[debug]       Load.apply: structureIndex took 31.3525ms
+[debug]       Load.apply: mkStreams took 0.0033ms
+[info] loading project definition from C:\Users\User\Documents\hw_scala\calc\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 4225.017ms
+[debug]     Load.loadUnit: defsScala took 0.0044ms
+[debug] [Loading] Scanning directory C:\Users\User\Documents\hw_scala\calc
+[debug]       Load.loadUnit: mkEval took 0.2775ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\User\Documents\hw_scala\calc, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin))), Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 2.2761 ms
+[info] loading settings for project calc from build.sbt ...
+[debug]         Load.resolveProject(calc) took 32.6953ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id calc, base: C:\Users\User\Documents\hw_scala\calc, plugins: List(<none>))) took 36.259ms
+[debug] [Loading] Done in C:\Users\User\Documents\hw_scala\calc, returning: (calc)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1652.2035ms
+[debug]     Load.loadUnit: cleanEvalClasses took 12.998ms
+[debug]   Load.loadUnit(file:/C:/Users/User/Documents/hw_scala/calc/, ...) took 5891.0787ms
+[debug] Load.apply: load took 5893.0559ms
+[debug] Load.apply: resolveProjects took 0.1276ms
+[debug] Load.apply: finalTransforms took 27.0499ms
+[debug] Load.apply: config.delegates took 0.4586ms
+[debug] Load.apply: Def.make(settings)... took 69.6125ms
+[debug] Load.apply: structureIndex took 22.8635ms
+[debug] Load.apply: mkStreams took 0.0023ms
+[info] set current project to calc (in build file:/C:/Users/User/Documents/hw_scala/calc/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 64370 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 64370, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to calc (in build file:/C:/Users/User/Documents/hw_scala/calc/)
+[debug] > Exec(idea-shell, None, None)
